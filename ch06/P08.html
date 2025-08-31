@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eval()로 수식 계산</title>
+</head>
+<body>
+    <h3>eval()로 수식 계산</h3>
+    <hr>
+    <script>
+        let input, answer;
+        while(true){
+            try{
+                input = prompt("수식 입력");
+                answer = eval(input);
+                break;
+            } catch (e){
+                alert("수식을 바르게 입력해주세요. 예) 2 + 12 * 8 - 20 / 7");
+                continue;
+            } 
+        }
+        document.write(input + " = " + answer);
+        
+    </script>
+</body>
+</html>
