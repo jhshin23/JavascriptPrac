@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 문자 출력하기</title>
+    <script>
+        function isDiff(input){
+            let f = parseFloat(input);
+            let n = parseInt(input);
+            let diff = f - n;
+            if(diff != 0) 
+                return true;
+            else
+                return false;
+        }
+        function printStar(input) {
+            if(isNaN(input) || isDiff(input)) {
+                document.write("입력 오류입니다.");
+                return;
+            }
+            
+            for(let i = 1; i <= input; i++){
+                for(let j = 1; j <= i; j++){
+                    document.write("*");
+                }
+                document.writeln("<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>별 문자 출력하기</h3>
+    <hr>
+    <script>
+        let input = prompt("정수를 입력하세요", "");
+        printStar(input);
+    </script>
+</body>
+</html>
