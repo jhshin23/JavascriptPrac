@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>document.write()</title>
+    <style>
+        table {
+            
+        }
+    </style>
 </head>
 <body>
     <script>
-        
+        // (1)
+        for(let i = 1; i <= 5; i++){
+            for(let j = 1; j <= i; j++){
+                document.write("*");
+            }
+            document.writeln("<br>");
+         }
+    </script>
+    <h3>document.write()로 표만들기</h3>
+    <hr>
+    <script>
+        // (2)
+        let n = 9;
+        document.write("<table border = '1'><tbody><tr><td><b>n</b></td>");
+        for(let i = 0 ; i <= n ; i++) {
+            document.write("<td>" + i + "</td>");
+        }
+        document.write("</tr>");
+        document.write("<tr><td><b>n²</b></td>");
+            for(let i = 0 ; i <= n ; i++) {
+                document.write("<td>" + i*i + "</td>");
+            }
+        document.write("</tr>");
+        document.write("</tbody><table>");
     </script>
 </body>
 </html>
