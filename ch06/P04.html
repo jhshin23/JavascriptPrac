@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월화수목금토일</title>
+    <script>
+        function printShift(input) {
+            switch(input) {
+                case "월" :
+                case "화" :
+                case "수" :
+                case "목" :
+                    document.write(input + "는 출근");
+                    break;
+                case "금" :
+                case "토" :
+                case "일" :
+                    document.write(input + "는 휴일");
+                    break;
+                default :
+                    alert("월, 화, 수, 목, 금, 토, 일 중에 하나를 입력해주세요");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>월화수목금토일</h3>
+    <hr>
+    <script>
+        let input = prompt("월화수목금토일 중에서 입력하세요");
+        printShift(input);
+    </script>
+</body>
+</html>
