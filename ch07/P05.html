@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 배열 다루기</title>
+    <script>
+        function printArr(names){
+            for(let i = 0 ; i < names.length ; i++) {
+                document.write(names[i]," ");
+            }
+            document.write("<br>");
+        }
+        function longestNameidx(names){
+            let longestName = names[0];
+            let idx = 0;
+            for(let i = 1 ; i < names.length ; i++) {
+                if(longestName.length < names[i].length) {
+                    longestName = names[i];
+                    idx = i;
+                }
+            }
+
+            return idx;
+        }
+        function orderedFirstName(names){
+            let t = names.sort();
+            return t[0];
+        }
+        function orderedNames(names){
+            let t = names.sort();
+            return t;
+        }
+    </script>
+</head>
+<body>
+    <h3>문자열 배열 다루기</h3>
+    <script>
+        let names = new Array("wonsun", "jaemoonlee", "kitae", "gracehwang");
+        
+        document.write("이름 : ");
+        printArr(names);
+        document.write("가장 긴 이름 : ",names[longestNameidx(names)],"<br>");
+        document.write("가장 먼저 나오는 이름 : ",orderedFirstName(names),"<br>");
+        document.write("증가순 이름 : ");
+        printArr(orderedNames(names));
+    </script>
+</body>
+</html>
