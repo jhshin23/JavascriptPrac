@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정수 5개를 입력받아 역순으로 출력</title>
+    <script>
+        function printArray(arr) {
+            for(let i = 0 ; i < arr.length;i++) {
+                document.write(arr[i] + " ");
+            }   
+        }
+        function inputNumber() {
+            let arr = new Array();
+            for(let i = 0 ; i < 5 ;i++) {
+                let input = prompt("정수 입력");
+                if (isNaN(input)) {
+                    alert("숫자를 입력하세요")
+                    i--;
+                }
+                else {
+                    arr[i] = Math.floor(input);
+                }
+            }
+            return arr;
+        }
+    </script>
+</head>
+<body>
+    <h3>정수 5개를 입력받아 역순으로 출력</h3>
+    <hr>
+    <div>입력된 수의 배열</div>
+    <script>
+        let arr = inputNumber();
+        printArray(arr);
+    </script>
+    <hr>
+    <div>역순으로 재정렬된 배열</div>
+    <script>
+        printArray(arr.reverse());
+    </script>
+</body>
+</html>
