@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math.random()으로 랜덤한 색 만들기</title>
+    <style>
+        div { display: inline-block; width: 150px; padding: 10px;}
+    </style>
+</head>
+<body id = "body">
+    <h3>16개의 랜덤한 색 만들기</h3>
+    <hr>
+    <script>
+        let Randomcolors = [];
+        for(let i = 0 ; i < 16 ; i++) {
+            r = Math.floor(Math.random()*256);
+            g = Math.floor(Math.random()*256);
+            b = Math.floor(Math.random()*256);
+            Randomcolors[i] = "rgb("+r+", "+g+", "+b+")";
+        }
+        let body = document.getElementById("body");
+
+        for(let i = 0 ; i < 16 ; i++) {
+            if (i % 4 == 0 && i != 0) document.write("<br>");
+
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = Randomcolors[i];
+            newDiv.style.backgroundColor = Randomcolors[i];
+            
+            body.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
