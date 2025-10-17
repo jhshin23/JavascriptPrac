@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book 객체 만들기</title>
+    <script>
+        //(1) new Object()
+        function print() {
+            document.write("book: ");
+            document.write(this.title);
+            document.write(", ");
+            document.write(this.author);
+            document.write(", ");
+            document.write(this.price);
+            document.write("<br>");
+
+        }
+
+        let book1 = new Object();
+        book1.title = "HTML5";
+        book1.author = "황기태";
+        book1.price = 20000;
+        book1.print = print;
+    </script>
+    <script>
+        //(2) 리터럴 표기법
+        let book2 = {
+            title : "HTML5",
+            author : "황기태",
+            price : 20000,
+            print : function() {
+            document.write("book: ");
+            document.write(this.title);
+            document.write(", ");
+            document.write(this.author);
+            document.write(", ");
+            document.write(this.price);
+            document.write("<br>");
+        }
+        }
+    </script>
+    <script>
+        //(3) 프로토타입
+        function Book() {
+            this.title = "HTML5";
+            this.author = "황기태";
+            this.price = 20000;
+
+            this.print = function() {
+                document.write("book: ");
+                document.write(this.title);
+                document.write(", ");
+                document.write(this.author);
+                document.write(", ");
+                document.write(this.price);
+                document.write("<br>");
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Book 객체 만들기</h3>
+    <hr>
+    <script>
+        book1.print();
+        book2.print();
+        let book3 = new Book();
+        book3.print();
+    </script>
+</body>
+</html>
