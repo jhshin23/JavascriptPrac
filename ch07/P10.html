@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book 객체 배열 만들기</title>
+    <script>
+        function printHighestPriceBook(books) {
+            let priceArr = new Array();
+            let highestPriceBooks = new Array();
+            for (let i = 0 ; i < books.length ; i++) {
+                priceArr[i] = parseInt(books[i].price);
+            }
+            priceArr = priceArr.sort();
+            priceArr = priceArr.reverse();
+            
+            document.write("가장 가격이 비싼 책은 ");
+            let j = 0;
+            for (let i = 0 ; i < books.length ; i++) {
+                if (parseInt(books[i].price) == priceArr[0]) {
+                    highestPriceBooks[j] = books[i].title;
+                    j++;
+                }
+            }
+            for(let i = 0 ; i < highestPriceBooks.length ; i++) {
+                if(i != 0) {
+                    document.write(", ");
+                }
+                document.write(highestPriceBooks[i]);
+            }
+
+        }
+        //(1) new Object()
+        function print() {
+            document.write(this.title);
+            document.write(", ");
+            document.write(this.author);
+            document.write(", ");
+            document.write(this.price);
+            document.write("<br>");
+        }
+
+        let book1 = new Object();
+        book1.title = "HTML5";
+        book1.author = "황기태";
+        book1.price = 20000;
+        book1.print = print;
+    </script>
+</head>
+<body>
+    <h3>book 객체 배열 만들기</h3>
+    <hr>
+    <script>
+        let quantity = 5;
+        let bookArray = new Array();
+        bookArray[0] = book1;
+        for(let i = 1 ; i < quantity ; i++) {
+            bookArray[i] = new Object();
+        }
+        for(let i = 1 ; i < bookArray.length ; i++) {
+            let input = prompt("콤마(,)로 분리하면서 책제목 저자 가격 순으로 입력");
+            bookInfo = input.split(",");
+            bookArray[i].title = bookInfo[0];
+            bookArray[i].author = bookInfo[1];
+            bookArray[i].price = bookInfo[2];
+            bookArray[i].print = print;
+        }
+        for(let i = 0 ; i < bookArray.length ; i++) {
+            bookArray[i].print();
+            if(i == bookArray.length-1) {
+                document.write("<hr>");
+            }
+        }
+        printHighestPriceBook(bookArray);
+        //CSS3,이재문,50000
+        //Java,한원선,30000
+        //스폰지밥,Grace,60000
+        //C++,Kitae,25000
+        </script>
+</body>
+</html>
